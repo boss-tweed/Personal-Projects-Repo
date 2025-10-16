@@ -1,0 +1,15 @@
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\bank_console_app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\bank_console_app.AssemblyInfoInputs.cache
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\bank_console_app.AssemblyInfo.cs
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\bank_console_app.csproj.CoreCompileInputs.cache
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\bank_console_app.sourcelink.json
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\bin\Debug\net9.0\bank_console_app.deps.json
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\bin\Debug\net9.0\bank_console_app.dll
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\bin\Debug\net9.0\bank_console_app.pdb
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\bank_console_app.dll
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\refint\bank_console_app.dll
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\bank_console_app.pdb
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\ref\bank_console_app.dll
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\bin\Debug\net9.0\bank_console_app.exe
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\bin\Debug\net9.0\bank_console_app.runtimeconfig.json
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\Banking-Console-App\bank_console_app\obj\Debug\net9.0\bank_console_app.genruntimeconfig.cache
