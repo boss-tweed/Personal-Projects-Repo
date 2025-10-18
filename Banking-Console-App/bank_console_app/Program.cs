@@ -30,7 +30,9 @@
             {
                 MakeWithdrawal(pin, balance);
             }
+
         }
+
         private static void CheckBalance(string pin, int balance)
         {
             Console.WriteLine("Enter pin to show balance: ");
@@ -83,25 +85,25 @@
                     balance += AnyAmount;
 
                     Console.WriteLine("Your new balance is: $" + balance + "!");
-                }
 
-                Console.WriteLine("Please make another selection");
+                    Console.WriteLine("Please make another selection");
 
-                int Choice = Convert.ToInt32(Console.ReadLine());
+                    int Choice = Convert.ToInt32(Console.ReadLine());
 
-                while (Choice == 1)
-                {
-                    CheckBalance(pin, balance);
-                }
+                    while (Choice == 1)
+                    {
+                        CheckBalance(pin, balance);
+                    }
 
-                while (Choice == 2)
-                {
-                    MakeDeposit(pin, balance);
-                }
+                    while (Choice == 2)
+                    {
+                        MakeDeposit(pin, balance);
+                    }
 
-                while (Choice == 3)
-                {
-                    MakeWithdrawal(pin, balance);
+                    while (Choice == 3)
+                    {
+                        MakeWithdrawal(pin, balance);
+                    }
                 }
             }
 
@@ -122,7 +124,7 @@
 
                 if (AnyAmount < balance)
                 {
-                    Console.WriteLine("You have deposited: $" + AnyAmount);
+                    Console.WriteLine("You have withdrawn: $" + AnyAmount);
                     balance -= AnyAmount;
 
                     Console.WriteLine("Your new balance is: $" + balance + "!");
@@ -145,7 +147,6 @@
                     {
                         MakeWithdrawal(pin, balance);
                     }
-
                 }
 
                 else if (AnyAmount > balance)
