@@ -12,24 +12,34 @@
             Console.WriteLine("Welcome to C# Bank " + Name);
             Console.WriteLine("1. Check Balance");
             Console.WriteLine("2. Make A Deposit");
-            Console.WriteLine("3. Make A Withdrawl");
+            Console.WriteLine("3. Make A Withdrawal");
+            Console.WriteLine("Exit. Type 'exit' to leave the application");
 
-            int Choice = Convert.ToInt32(Console.ReadLine());
 
-            if (Choice == 1)
+            var choice = string.Empty;
+
+            while (choice != "exit")
             {
-                CheckBalance(pin, balance);
-            }
+                Console.WriteLine("Please make a selection: ");
+                choice = Console.ReadLine();
 
-            else if (Choice == 2)
-            {
-                MakeDeposit(pin, balance);
-            }
+                if (choice == "1")
+                {
+                    CheckBalance(pin, balance);
+                }
 
-            else if (Choice == 3)
-            {
-                MakeWithdrawal(pin, balance);
+                else if (choice == "2")
+                {
+                    MakeDeposit(pin, balance);
+                }
+
+                else if (choice == "3")
+                {
+                    MakeWithdrawal(pin, balance);
+                }
+                
             }
+            
 
         }
 
@@ -46,23 +56,6 @@
                 Console.WriteLine("Your Balance is: $" + balance);
 
                 Console.WriteLine("Please make another selection");
-
-                int Choice = Convert.ToInt32(Console.ReadLine());
-
-                while (Choice == 1)
-                {
-                    CheckBalance(pin, balance);
-                }
-
-                while (Choice == 2)
-                {
-                    MakeDeposit(pin, balance);
-                }
-
-                while (Choice == 3)
-                {
-                    MakeWithdrawal(pin, balance);
-                }
             }
         }
         private static void MakeDeposit(string pin, int balance)
@@ -85,25 +78,6 @@
                     balance += AnyAmount;
 
                     Console.WriteLine("Your new balance is: $" + balance + "!");
-
-                    Console.WriteLine("Please make another selection");
-
-                    int Choice = Convert.ToInt32(Console.ReadLine());
-
-                    while (Choice == 1)
-                    {
-                        CheckBalance(pin, balance);
-                    }
-
-                    while (Choice == 2)
-                    {
-                        MakeDeposit(pin, balance);
-                    }
-
-                    while (Choice == 3)
-                    {
-                        MakeWithdrawal(pin, balance);
-                    }
                 }
             }
 
@@ -129,24 +103,6 @@
 
                     Console.WriteLine("Your new balance is: $" + balance + "!");
 
-                    Console.WriteLine("Please make another selection");
-
-                    int Choice = Convert.ToInt32(Console.ReadLine());
-
-                    while (Choice == 1)
-                    {
-                        CheckBalance(pin, balance);
-                    }
-
-                    while (Choice == 2)
-                    {
-                        MakeDeposit(pin, balance);
-                    }
-
-                    while (Choice == 3)
-                    {
-                        MakeWithdrawal(pin, balance);
-                    }
                 }
 
                 else if (AnyAmount > balance)
