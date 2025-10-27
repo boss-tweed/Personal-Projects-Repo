@@ -12,7 +12,7 @@
             Console.WriteLine("Welcome to C# Bank " + Name);
             Console.WriteLine("1. Check Balance");
             Console.WriteLine("2. Make A Deposit");
-            Console.WriteLine("3. Make A Withdrawl");
+            Console.WriteLine("3. Make A Withdrawal");
             Console.WriteLine("Exit. Type 'exit' to leave the application");
 
             var choice = string.Empty;
@@ -36,6 +36,7 @@
                     balance = MakeWithdrawal(pin, balance);
                 }
             }
+            
 
         }
 
@@ -49,9 +50,7 @@
             {
                 Console.WriteLine("Login Success!");
 
-                Console.WriteLine("Your Balance is: $" + balance);
-
-                Console.WriteLine("Please make another selection");
+                Console.WriteLine("Your balance is: $" + balance);
             }
         }
 
