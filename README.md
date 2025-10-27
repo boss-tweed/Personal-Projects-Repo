@@ -6,5 +6,5 @@ This repository is for my personal projects overseen by mentor and projects auth
 - Barebones console app:
     - Coded w/ C#
     - Menu to deposit and withdraw balances
-    - User be able to specify which opptions
-    - pronts current balance
+    - User be able to specify which options
+    - prints current balance
