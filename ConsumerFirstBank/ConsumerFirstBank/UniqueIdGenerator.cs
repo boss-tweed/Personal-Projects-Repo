@@ -12,7 +12,7 @@ namespace ConsumerFirstBank
     {
         private static readonly Lazy<UniqueIdGenerator> _instance = new Lazy<UniqueIdGenerator>(() => new UniqueIdGenerator());
         public static UniqueIdGenerator Instance => _instance.Value;
-        
+
         private readonly HashSet<string> _issued = new HashSet<string>();
         private readonly object _lock = new object();
         private readonly RandomNumberGenerator _rng = RandomNumberGenerator.Create();
