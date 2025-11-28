@@ -59,9 +59,9 @@ namespace ConsumerFirstBank
             account.Balance += amount;
             Balance = account.Balance;
 
-            Console.WriteLine("Transaction {0}: Deposit of {1:C} to {2} account successful. New balance: {3:C}",
-                TransactionId, Amount, AccountType, Balance);
+            Console.WriteLine("Transaction {0}: Deposit of {1:C} to {2} account #{3} successful. New balance: {4:C}",
+                TransactionId, Amount, AccountType, account.AccountNumber, Balance);
             return true;
-        }        // Additional transaction helpers (transfer, reversal) can be added here
+        }        
     }           
 }

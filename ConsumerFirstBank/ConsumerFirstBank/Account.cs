@@ -15,6 +15,9 @@ namespace ConsumerFirstBank
         public string AccountNumber { get; set; }
         public decimal Balance { get; set; }
 
+        public string CheckingAccountNumber { get; private set; }
+        public string SavingsAccountNumber { get; private set; }
+
         public List<Transaction> Transactions { get; } = new List<Transaction>();
 
         public string ChooseAcct(int value)
@@ -30,20 +33,43 @@ namespace ConsumerFirstBank
             }
 
             const int accountNumberDigits = 9;
-            if (string.IsNullOrEmpty(AccountNumber))
+            if (string.IsNullOrEmpty(CheckingAccountNumber))
             {
-                AccountNumber = UniqueIdGenerator.Instance.NextNumericId(accountNumberDigits);
+                CheckingAccountNumber = UniqueIdGenerator.Instance.NextNumericId(accountNumberDigits);
             }
+            if (string.IsNullOrEmpty(SavingsAccountNumber))
+            {
+                SavingsAccountNumber = UniqueIdGenerator.Instance.NextNumericId(accountNumberDigits);
+            }
+
+            AccountNumber = AccountType == "Checking" ? CheckingAccountNumber : SavingsAccountNumber;
 
             return AccountType;
         }
 
         public string AssignUniqueAccountNumber(int digits = 9)
         {
-            AccountNumber = UniqueIdGenerator.Instance.NextNumericId(digits);
+            //Assign a unique account number if not already assigned
+            if (string.IsNullOrEmpty(AccountType))
+            {
+                if (string.IsNullOrEmpty(CheckingAccountNumber))
+                    CheckingAccountNumber = UniqueIdGenerator.Instance.NextNumericId(digits);
+                if (string.IsNullOrEmpty(SavingsAccountNumber))
+                    SavingsAccountNumber = UniqueIdGenerator.Instance.NextNumericId(digits);
+                //Default to Checking account number  
+                AccountNumber = CheckingAccountNumber;
+            }
+            else
+            {
+                if (AccountType == "Checking" && string.IsNullOrEmpty(CheckingAccountNumber))
+                    CheckingAccountNumber = UniqueIdGenerator.Instance.NextNumericId(digits);
+                if (AccountType == "Savings" && string.IsNullOrEmpty(SavingsAccountNumber))
+                    SavingsAccountNumber = UniqueIdGenerator.Instance.NextNumericId(digits);
+
+                AccountNumber = AccountType == "Checking" ? CheckingAccountNumber : SavingsAccountNumber;
+            }
             return AccountNumber;
         }
-
         // Deposit that delegates to Transaction.MakeDeposit and records the transaction when successful
         public bool Deposit(decimal amount)
         {

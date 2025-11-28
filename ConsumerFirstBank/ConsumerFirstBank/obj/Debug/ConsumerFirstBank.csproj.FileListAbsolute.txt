@@ -5,3 +5,4 @@ C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\Consume
 C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\obj\Debug\ConsumerFirstBank.csproj.CoreCompileInputs.cache
 C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\obj\Debug\ConsumerFirstBank.exe
 C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\obj\Debug\ConsumerFirstBank.pdb
+C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\obj\Debug\ConsumerFirstBank.exe.config

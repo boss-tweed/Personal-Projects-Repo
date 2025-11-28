@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\consumerfirstbank\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|solutionrelative:consumerfirstbank\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\consumerfirstbank\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|solutionrelative:consumerfirstbank\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|c:\\users\\wicke\\documents\\github\\personal-projects-repo\\consumerfirstbank\\consumerfirstbank\\uniqueidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|solutionrelative:consumerfirstbank\\uniqueidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\consumerfirstbank\\patron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|solutionrelative:consumerfirstbank\\patron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\consumerfirstbank\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|solutionrelative:consumerfirstbank\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\consumerfirstbank\\patron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|solutionrelative:consumerfirstbank\\patron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|c:\\users\\wicke\\documents\\github\\personal-projects-repo\\consumerfirstbank\\consumerfirstbank\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|solutionrelative:consumerfirstbank\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\consumerfirstbank\\uniqueidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|solutionrelative:consumerfirstbank\\uniqueidgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{45922B9D-CE8C-4C79-818F-53FE3EE33FD3}|ConsumerFirstBank\\ConsumerFirstBank.csproj|C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\consumerfirstbank\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 366,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,52 +46,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "UniqueIdGenerator.cs",
               "DocumentMoniker": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\UniqueIdGenerator.cs",
               "RelativeDocumentMoniker": "ConsumerFirstBank\\UniqueIdGenerator.cs",
               "ToolTip": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\UniqueIdGenerator.cs",
               "RelativeToolTip": "ConsumerFirstBank\\UniqueIdGenerator.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-26T16:48:54.421Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Transaction.cs",
               "DocumentMoniker": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\Transaction.cs",
               "RelativeDocumentMoniker": "ConsumerFirstBank\\Transaction.cs",
               "ToolTip": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\Transaction.cs",
               "RelativeToolTip": "ConsumerFirstBank\\Transaction.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAqwEAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAqwDYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T03:20:23.831Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\Account.cs",
               "RelativeDocumentMoniker": "ConsumerFirstBank\\Account.cs",
               "ToolTip": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\Account.cs",
               "RelativeToolTip": "ConsumerFirstBank\\Account.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAtwB8AAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAtwEcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T03:09:08.714Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Patron.cs",
               "DocumentMoniker": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\Patron.cs",
               "RelativeDocumentMoniker": "ConsumerFirstBank\\Patron.cs",
               "ToolTip": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\Patron.cs",
               "RelativeToolTip": "ConsumerFirstBank\\Patron.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA6wA4AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA6wCAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T03:02:52.778Z",
               "EditorCaption": ""
@@ -110,13 +110,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\Program.cs",
               "RelativeDocumentMoniker": "ConsumerFirstBank\\Program.cs",
               "ToolTip": "C:\\Users\\wicke\\Documents\\GitHub\\Personal-Projects-Repo\\ConsumerFirstBank\\ConsumerFirstBank\\Program.cs",
               "RelativeToolTip": "ConsumerFirstBank\\Program.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAkwC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAA5wEQAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T02:37:24.636Z",
               "EditorCaption": ""
