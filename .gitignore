@@ -38,3 +38,4 @@ dist/
 # OS
 Thumbs.db
 .DS_Store
+/ConsumerFirstBank/.vs/ConsumerFirstBank/v17/.suo
