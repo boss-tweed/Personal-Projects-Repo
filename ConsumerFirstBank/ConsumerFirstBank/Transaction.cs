@@ -20,6 +20,27 @@ namespace ConsumerFirstBank
             TransactionId = UniqueIdGenerator.Instance.NextTransactionId();
         }
 
+        // Perform a deposit on an Account instance. Returns true if successful.
+        public bool MakeDeposit(Account account, decimal amount)
+        {
+            if (account == null) throw new ArgumentNullException(nameof(account));
+            AccountType = account.AccountType;
+            TransactionType = "Deposit";
+            Amount = amount;
+
+            if (amount <= 0m)
+            {
+                Console.WriteLine("Invalid deposit amount.");
+                return false;
+            }
+
+            Balance = account.Deposit(amount);
+
+            Console.WriteLine("Transaction {0}: Deposit of {1:C} to {2} account successful. New balance: {3:C}",
+                TransactionId, Amount, AccountType, Balance);
+            return true;
+        }
+
         // Perform a withdrawal on an Account instance. Returns true if successful.
         public bool MakeWithdrawal(Account account, decimal amount)
         {
@@ -34,34 +55,17 @@ namespace ConsumerFirstBank
                 return false;
             }
 
-            if (amount > account.Balance)
+            if (!account.Withdraw(amount, out decimal newBal))
             {
-                Console.WriteLine("Insufficient funds in {0} account. Please try again.", account.AccountType);
+                Console.WriteLine("Insufficient funds in {0} account. Current balance {1:C}. Please try again.", account.AccountType, newBal);
                 return false;
             }
 
-            account.Balance -= amount;
-            Balance = account.Balance;
+            Balance = newBal;
 
             Console.WriteLine("Transaction {0}: Withdrawal of {1:C} from {2} account successful. New balance: {3:C}",
                 TransactionId, Amount, AccountType, Balance);
             return true;
-        }
-
-        // Perform a deposit on an Account instance. Returns true if successful.
-        public bool MakeDeposit(Account account, decimal amount)
-        {
-            if (account == null) throw new ArgumentNullException(nameof(account));
-            AccountType = account.AccountType;
-            TransactionType = "Deposit";
-            Amount = amount;
-
-            account.Balance += amount;
-            Balance = account.Balance;
-
-            Console.WriteLine("Transaction {0}: Deposit of {1:C} to {2} account successful. New balance: {3:C}",
-                TransactionId, Amount, AccountType, Balance);
-            return true;
-        }        // Additional transaction helpers (transfer, reversal) can be added here
+        }                
     }           
 }
