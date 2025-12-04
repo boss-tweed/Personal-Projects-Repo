@@ -11,7 +11,7 @@ namespace ConsumerFirstBank
         //Properties
         public string Name { get; set; }
         public int Pin { get; set; }
-        public int AccountNumber { get; set; }
+        public string AccountNumber { get; set; }
         public string PatronId { get; set; }
         public List<Account> Accounts { get; set; } = new List<Account>();
 
@@ -21,6 +21,7 @@ namespace ConsumerFirstBank
             Pin = validPin;
             // Assign unique patron id
             PatronId = UniqueIdGenerator.Instance.NextPatronId();
+            
         }
 
     }

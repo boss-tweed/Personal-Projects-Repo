@@ -1,7 +1,0 @@
-C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\bin\Debug\ConsumerFirstBank.exe.config
-C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\bin\Debug\ConsumerFirstBank.exe
-C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\bin\Debug\ConsumerFirstBank.pdb
-C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\obj\Debug\ConsumerFirstBank.csproj.AssemblyReference.cache
-C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\obj\Debug\ConsumerFirstBank.csproj.CoreCompileInputs.cache
-C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\obj\Debug\ConsumerFirstBank.exe
-C:\Users\wicke\Documents\GitHub\Personal-Projects-Repo\ConsumerFirstBank\ConsumerFirstBank\obj\Debug\ConsumerFirstBank.pdb
