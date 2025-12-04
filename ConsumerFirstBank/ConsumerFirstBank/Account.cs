@@ -10,99 +10,92 @@ namespace ConsumerFirstBank
     public class Account
     {
         private readonly object _balanceLock = new object();
-
-        public string AccountType { get; private set; }
-        public string CheckingAccountNumber { get; private set; }
-        public string SavingsAccountNumber { get; private set; }
         public string AccountNumber { get; set; }
         public decimal Balance { get; set; }
+        public AccountType? SelectedAccountType { get; set; }
 
         //To keep balances separate for sub-accounts
-        private readonly Dictionary<string, decimal> _balances = new Dictionary<string, decimal>
+        private readonly Dictionary<AccountType, decimal> _balances = new Dictionary<AccountType, decimal>
         {
-            { "Checking", 0m },
-            { "Savings", 0m }
+            { AccountType.Checking, 0m },
+            { AccountType.Savings, 0m },
+            { AccountType._401k, 0m }
         };
+
+        //Private Storge for individually generted sub-account numbers
+        private readonly Dictionary<AccountType, string> _subAccountNumbers = new Dictionary<AccountType, string>();
+
+        public Account()
+        {
+            AccountNumber = UniqueIdGenerator.Instance.NextAccountNumber();
+        }
 
         public List<Transaction> Transactions { get; } = new List<Transaction>();
 
-        //New: assign both unique numbers at creation so they are immediately available for printing
-        public Account()
+        public void ChooseAccountService(AccountType acctType)
         {
-            const int accountNumberDigits = 9;
-            CheckingAccountNumber = UniqueIdGenerator.Instance.NextNumericId(accountNumberDigits);
-            SavingsAccountNumber = UniqueIdGenerator.Instance.NextNumericId(accountNumberDigits);
+            SelectedAccountType = acctType;
+        }
+        
+        public void ChooseAccountService(int value)
+        {
+            if (!Enum.IsDefined(typeof(AccountType), value))
+                throw new ArgumentOutOfRangeException(nameof(value), "Choose a valid account type.");
+            ChooseAccountService((AccountType)value);
         }
 
-        public string ChooseAcct(int value)
+        //Lazily generate and return sub-account number for given account type
+        public string AcctNumFor(AccountType acctType)
         {
-            switch (value)
+            lock (_balanceLock)
             {
-                case 1:
-                    AccountType = "Checking";            
-                    break;
-                case 2:
-                    AccountType = "Savings";            
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(value), "Choose 1 for Checking or 2 for Savings.");
+                if (!_subAccountNumbers.TryGetValue(acctType, out var num))
+                {
+                    num = UniqueIdGenerator.Instance.NextAccountNumber();
+                    _subAccountNumbers[acctType] = num;
+                }
+                return num;
             }
-            return AccountType;
         }
 
-        //Get the current account number based on selected account type
         public string CurrentAcctNum
         {
             get
             {
-                return AccountType == "Checking" ? CheckingAccountNumber
-                     : AccountType == "Savings" ? SavingsAccountNumber
-                     : null;
+                if (!SelectedAccountType.HasValue) return null;
+                return AcctNumFor(SelectedAccountType.Value);
             }
         }
 
-        //Get the account number for specific type w/o changing selection
-        public string AcctNumFor(string acctType)
-        {
-            if (string.Equals(acctType, "Checking", StringComparison.OrdinalIgnoreCase))
-                return CheckingAccountNumber;
-            if (string.Equals(acctType, "Savings", StringComparison.OrdinalIgnoreCase))
-                return SavingsAccountNumber;
-            return null;
-        }
+        //Transaction methods
 
-        //Deposit that delegates to Transaction.MakeDeposit and records the transaction when successful
-        //Operates on the currently selected account type
+
+        //Deposit
         public decimal Deposit(decimal amount)
         {
-            if (string.IsNullOrEmpty(AccountType)) throw new InvalidOperationException("Account type not selected");
-            if (amount <= 0m) throw new ArgumentOutOfRangeException(nameof(amount));
+            if (!SelectedAccountType.HasValue) throw new InvalidOperationException("Account type not selected");
+            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
 
             lock (_balanceLock)
             {
-                _balances[AccountType] += amount;
-                return _balances[AccountType];
-            }
-        }
-        //Withdrawal that delegates to Transaction.MakeWithdrawal and records the transaction when successful
-        public bool Withdraw(decimal amount, out decimal newBal)
-        {
-            newBal = 0m;
-            if (string.IsNullOrEmpty(AccountType)) throw new InvalidOperationException("Account type not selected");
-            if (amount <= 0m) return false;
+                var key = SelectedAccountType.Value;
+                _balances[key] += amount;
 
-            lock (_balanceLock)
-            {
-                var current = _balances[AccountType];
-                if (amount > current)
+                //Update balance (sum of sub-accounts)
+                Balance = 0m;
+                foreach (var v in _balances.Values) Balance += v;
+
+                //Create and record a transaction locally
+                var tx = new Transaction
                 {
-                    newBal = current;
-                    return false;
-                }
-                current -= amount;
-                _balances[AccountType] = current;
-                newBal = current;   
-                return true;
+                    Amount = amount,
+                    Balance = _balances[key]
+                };
+
+                Transactions.Add(tx);
+
+                //Return new balance for selected sub-account
+                return _balances[key];
             }
         }
     }
