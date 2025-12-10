@@ -11,13 +11,12 @@ namespace ConsumerFirstBank
         public string TransactionId { get; set; }
         public decimal Amount { get; set; }
         public decimal Balance { get; set; }
+        public string Note { get; set; }
 
         public Transaction()
         {
             // Assign unique transaction id on creation
             TransactionId = UniqueIdGenerator.Instance.NextTransactionId();
-        }
-
-        
+        } 
     }           
 }

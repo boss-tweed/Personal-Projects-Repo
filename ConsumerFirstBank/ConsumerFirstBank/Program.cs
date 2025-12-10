@@ -44,9 +44,14 @@ namespace ConsumerFirstBank
             bool banking = false;
             while (!banking)
             {
-                Console.WriteLine("Please select from one of the folowing options : \n1. Checking\n2. Savings");
+                Console.WriteLine("Please select from one of the folowing options : \n1. Checking\n2. Savings\n3. 401k\n4. Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 account.ChooseAccountService(choice);
+                if (choice == 4)
+                {
+                    Console.WriteLine("Thank you for banking with Consumer First Bank! Have a great day!");
+                    break;
+                }
                 Console.WriteLine("You have selected {0}, account number {1}.", account.SelectedAccountType, account.CurrentAcctNum);
                 Console.WriteLine("Please enter your pin to proceed:");
                 int inputPin = Convert.ToInt32(Console.ReadLine());
@@ -66,7 +71,27 @@ namespace ConsumerFirstBank
                     case 2:
                         Console.WriteLine("Enter amount to withdraw:");
                         decimal withAmount = Convert.ToDecimal(Console.ReadLine());
-                     
+                        decimal balAfterWith = account.Withdraw(withAmount);
+                        var lastTxWith = account.Transactions.Last();
+                        Console.WriteLine("Withdrawal of {0:C} from {1} account successful. New balance is {2:C}. Transaction ID: {3}", withAmount, account.SelectedAccountType, balAfterWith, lastTxWith.TransactionId);
+                        break;
+                    case 3:
+                        Console.WriteLine("Enter amount to transfer:");
+                        decimal transamount = Convert.ToDecimal(Console.ReadLine());
+                        Console.WriteLine("Enter target account type \n1: Checking\n2: Savings\n3: 401k");
+                        int targetInput = Convert.ToInt32(Console.ReadLine());
+                        AccountType targetType = (AccountType)targetInput;
+                        decimal balAfterTrans = account.Transfer(transamount, targetType);
+                        var lastTxTrans = account.Transactions.Last();  
+                        Console.WriteLine("Transfer of {0:C} from {1} account to {2} account successful. New balance is {3:C}. Transaction ID: {4}", transamount, account.SelectedAccountType, targetType, balAfterTrans, lastTxTrans.TransactionId);
+                        break;
+                    case 4:
+                        decimal currentBal = account.CheckBalance();
+                        Console.WriteLine("Current balance for {0} account is {1:C}", account.SelectedAccountType, currentBal);
+                        break;
+                    case 5:
+                        banking = true;
+                        Console.WriteLine("Thank you for banking with Consumer First Bank! Have a great day!");
                         break;
                 }
             }
