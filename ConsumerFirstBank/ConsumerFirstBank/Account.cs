@@ -36,7 +36,7 @@ namespace ConsumerFirstBank
         {
             SelectedAccountType = acctType;
         }
-        
+
         public void ChooseAccountService(int value)
         {
             if (!Enum.IsDefined(typeof(AccountType), value))
@@ -95,6 +95,81 @@ namespace ConsumerFirstBank
                 Transactions.Add(tx);
 
                 //Return new balance for selected sub-account
+                return _balances[key];
+            }
+        }
+
+        //Withdraw
+        public decimal Withdraw(decimal amount)
+        {
+            if (!SelectedAccountType.HasValue) throw new InvalidOperationException("Account type not selected");
+            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+
+            lock (_balanceLock)
+            {
+                var key = SelectedAccountType.Value;
+                if (_balances[key] < amount)
+                    throw new InvalidOperationException("Insufficient funds");
+                _balances[key] -= amount;
+
+                //Update balance (sum of sub-accounts)
+                Balance = 0m;
+                foreach (var v in _balances.Values) Balance += v;
+
+                //Create and record a transaction locally
+                var tx = new Transaction
+                {
+                    Amount = -amount,
+                    Balance = _balances[key]
+                };
+
+                Transactions.Add(tx);
+
+                //Return new balance for selected sub-account
+                return _balances[key];
+            }
+        }
+
+        //Transfer
+        public decimal Transfer(decimal amount, AccountType toAccountType)
+        {
+            if (!SelectedAccountType.HasValue) throw new InvalidOperationException("Account type not selected");
+            if (amount <= 0) throw new ArgumentOutOfRangeException(nameof(amount));
+
+            lock (_balanceLock) 
+            {
+                var key = SelectedAccountType.Value;
+                if (_balances[key] < amount)
+                    throw new InvalidOperationException("Insufficient funds");
+                _balances[key] -= amount;
+
+                //Update balance (sum of sub-accounts)
+                _balances[toAccountType] += amount;
+                Balance = 0m;
+                foreach (var v in _balances.Values) Balance += v;
+
+                //Create and record a transaction locally
+                var tx = new Transaction
+                {
+                    Amount = -amount,
+                    Balance = _balances[key],
+                    Note = $"Transfer to {toAccountType}"
+                };
+
+                Transactions.Add(tx);
+
+                //Return new balance for selected sub-account
+                return _balances[key];
+            }
+        }
+
+        //Check balance
+        public decimal CheckBalance()
+        {
+            if (!SelectedAccountType.HasValue) throw new InvalidOperationException("Account type not selected");
+            lock (_balanceLock)
+            {
+                var key = SelectedAccountType.Value;
                 return _balances[key];
             }
         }

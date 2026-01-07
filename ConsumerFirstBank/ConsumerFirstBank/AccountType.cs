@@ -10,7 +10,7 @@ namespace ConsumerFirstBank
         {
             Checking = 1,
             Savings,
-            _401k
-
+            _401k,
+            Exit
         }
 }

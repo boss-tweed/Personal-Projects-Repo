@@ -20,9 +20,7 @@ namespace ConsumerFirstBank
             Name = name;
             Pin = validPin;
             // Assign unique patron id
-            PatronId = UniqueIdGenerator.Instance.NextPatronId();
-            
+            PatronId = UniqueIdGenerator.Instance.NextPatronId();           
         }
-
     }
 }
